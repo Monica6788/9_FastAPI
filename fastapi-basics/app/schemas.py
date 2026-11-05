@@ -18,5 +18,11 @@ class UserCreate(BaseModel):
         - username
         - password
     """
-    username: str = Field()
-    password: str = Field()
+    username: str
+    password: str
+
+# {"id": xx, "username": "xxx"}
+class UserOut(BaseModel):
+    id: int
+    username: str
+    
