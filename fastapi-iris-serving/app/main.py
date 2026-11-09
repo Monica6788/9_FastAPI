@@ -22,6 +22,7 @@ def health():
 # 힌트: IrisInput, IrisOutput, Depends, verify_token, predictor는 이미 import 되어 있다.
 #       위의 /health 엔드포인트를 참고한다.
 
+# docs 웹에서는 토큰 일치 여부 확인이 불가하여 Talend API Tester 사용
 @app.post("/predict",
           response_model=IrisOutput,
           dependencies=[Depends(verify_token)])
