@@ -42,6 +42,8 @@ uvicorn app.main:app --port 8000
 | `API_TOKEN` | 필수 | `/predict` 호출 시 필요한 Bearer 토큰 |
 | `MODEL_PATH` | 선택 | 모델 파일 경로 (기본값: `app/ml/artifacts/model.joblib`) |
 
+> 배포할 때에도 환경변수는 파일로 관리하는 게 아니라 OS에서 관리한다.
+
 ## API
 
 ### `GET /health`

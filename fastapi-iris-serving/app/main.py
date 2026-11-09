@@ -21,3 +21,11 @@ def health():
 # 3. 본문: predictor.predict()에 입력을 전달하고, 결과를 반환한다.
 # 힌트: IrisInput, IrisOutput, Depends, verify_token, predictor는 이미 import 되어 있다.
 #       위의 /health 엔드포인트를 참고한다.
+
+@app.post("/predict",
+          response_model=IrisOutput,
+          dependencies=[Depends(verify_token)])
+def predict(body: IrisInput):
+    result = predictor.predict(body)
+
+    return result
